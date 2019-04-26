@@ -1,0 +1,240 @@
+snippet lib
+	library('${1:package}')
+
+snippet req
+	require('${1:package}')
+
+snippet src
+	source("${1:file.R}")
+
+snippet ret
+	return(${1:code})
+
+snippet mat
+	matrix(${1:data}, nrow = ${2:rows}, ncol = ${3:cols})
+
+snippet sg
+	setGeneric("${1:generic}", function(${2:x, ...}) {
+		standardGeneric("${1:generic}")
+	})
+
+snippet sm
+	setMethod("${1:generic}", ${2:class}, function(${2:x, ...}) {
+		${0}
+	})
+
+snippet sc
+	setClass("${1:Class}", slots = c(${2:name = "type"}))
+
+snippet if
+	if (${1:condition}) {
+		${0}
+	}
+
+snippet el
+	else {
+		${0}
+	}
+
+snippet ei
+	else if (${1:condition}) {
+		${0}
+	}
+
+snippet fun
+	${1:name} = function(${2:variables}) {
+		${0}
+	}
+
+snippet for
+	for (${1:variable} in ${2:vector}) {
+		${0}
+	}
+
+snippet while
+	while (${1:condition}) {
+		${0}
+	}
+
+snippet switch
+	switch (${1:object},
+		${2:case} = ${3:action}
+	)
+
+snippet apply
+	apply(${1:array}, ${2:margin}, ${3:...})
+
+snippet lapply
+	lapply(${1:list}, ${2:function})
+
+snippet sapply
+	sapply(${1:list}, ${2:function})
+
+snippet mapply
+	mapply(${1:function}, ${2:...})
+
+snippet tapply
+	tapply(${1:vector}, ${2:index}, ${3:function})
+
+snippet vapply
+	vapply(${1:list}, ${2:function}, FUN.VALUE = ${3:type}, ${4:...})
+
+snippet rapply
+	rapply(${1:list}, ${2:function})
+
+snippet ts
+	`r paste("#", date(), "------------------------------\n")`
+
+snippet date
+	`r paste("# Date:      ", Sys.Date(), "\n")`
+
+snippet author
+	`r paste("# Author:    ", Sys.info()[["user"]], "\n")`
+
+snippet fn
+	# Filename:   ${1:filename}.R
+
+snippet sep_stars
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	# ${1:X} ${2:Section}
+	`r paste(c("#", rep("*", 79), "\n"), collapse = "")`
+
+snippet sep_plus
+	`r paste(c("#", rep("+", 79)), collapse = "")`
+	# ${1:X} ${2:Section}
+	`r paste(c("#", rep("+", 79), "\n"), collapse = "")`
+
+snippet sep_tilde
+	`r paste(c("#", rep("~", 79)), collapse = "")`
+	# ${1:X} ${2:Section}
+	`r paste(c("#", rep("~", 79), "\n"), collapse = "")`
+
+snippet sep_percent
+	`r paste(c("#", rep("%", 79)), collapse = "")`
+	# ${1:X} ${2:Section}
+	`r paste(c("#", rep("%", 79), "\n"), collapse = "")`
+
+snippet sep_equal
+	`r paste(c("#", rep("=", 79)), collapse = "")`
+	# ${1:X} ${2:Section}
+	`r paste(c("#", rep("=", 79), "\n"), collapse = "")`
+
+snippet r_header
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	#
+	# ${1:Description}
+	#
+	`r paste("# Author:    ", Sys.info()[["user"]])`
+	`r paste("# Date:      ", Sys.Date())`
+	`r paste(c("#", rep("*", 79), "\n"), collapse = "")`
+
+
+snippet yaml_header
+	#' ---
+	#' title: ${1:"Description"}
+	`r paste("#' author: ", Sys.info()[["user"]])`
+	`r paste("#' date: ", Sys.Date())`
+	#' output:
+	#'   html_notebook:
+	#'     code_folding: show
+	#'     toc: true
+	#'     toc_float: true
+	#'     collapsed: false
+	#' ---
+	#+ setup, include=FALSE
+	knitr::opts_chunk$set(collapse=FALSE, message=FALSE, warning=FALSE, prompt=FALSE)
+	#+ libs, echo=FALSE
+
+
+snippet r_skeleton
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	#
+	# ${1:Description}
+	#
+	`r paste("# Author:    ", Sys.info()[["user"]])`
+	`r paste("# Date:      ", Sys.Date())`
+	`r paste(c("#", rep("*", 79), "\n"), collapse = "")`
+
+	Rscript = "${2:rel_path_to_filename}.R"
+
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	# 0. load required packages ----
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+
+	# load libraries
+	library('magrittr')
+	library('tidyverse')
+
+	library('GIjane')
+
+	library('${3:package}')
+
+	# create output folder
+	dir_create_output(Rscript)
+
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	# 1. read data ----
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+
+	# ... and so on
+
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	# Z. create *.Rdone ----
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+
+	file.create(sub(pattern = "\\\.R", replacement = "\\\.Rdone", x = Rscript))
+
+snippet shinyapp
+	library(shiny)
+
+	ui <- fluidPage(
+	  ${0}
+	)
+
+	server <- function(input, output, session) {
+
+	}
+
+	shinyApp(ui, server)
+
+snippet geom_empty
+	any(is.na(st_dimension(${1:x})))
+
+snippet geom_corrupt
+	any(is.na(st_is_valid(${1:x})))
+
+snippet geom_invalid
+	any(na.omit(st_is_valid(${1:x})) == FALSE)
+
+snippet tbl_pointplus
+	pointplus = DBI::dbConnect(odbc::odbc(), "sql_pointplus")
+	${1:table} = tbl(src = pointplus, ${2:"table_name"}) %>% tibble::as_tibble()
+
+snippet tbl_accdb
+	accdb = here::here(${1:"path.accdb"})
+	accdb_con = DBI::dbConnect(odbc::odbc(),
+	                           .connection_string = paste0("Driver={Microsoft Access Driver (*.mdb, *.accdb);",
+	                                                       "Dbq=", accdb))
+	tbl = tbl(src = accdb_con, ${2:"table_name"}) %>% tibble::as_tibble()
+
+snippet rm_all_restart
+	rm(list = ls())
+	gc()
+	.rs.restartR()
+
+snippet excel
+	path = file.path("${1:path_to_file.xlsx}")
+	${2:data} <- path %>%
+		excel_sheets() %>%
+		set_names() %>%
+		map_df(~ read_excel(path = path, sheet = .x), .id = "sheet")')
+
+snippet GIdrat
+	drat::addRepo("GIdrat", alturl = "file://gfk.com/data/001483/geom/MDR/GIdev/06_software/R/GIpackages/DRAT/")
+	getOption("repos")
+
+snippet hh
+	here::here("${1:folder}", "${2:file")
+
+snippet aa
+	${1:dataset} <- ${1:dataset} %>% ${0}
