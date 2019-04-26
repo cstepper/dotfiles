@@ -1,8 +1,8 @@
 snippet lib
-	library('${1:package}')
+	library(${1:package})
 
 snippet req
-	require('${1:package}')
+	require(${1:package})
 
 snippet src
 	source("${1:file.R}")
@@ -162,12 +162,12 @@ snippet r_skeleton
 	`r paste(c("#", rep("*", 79)), collapse = "")`
 
 	# load libraries
-	library('magrittr')
-	library('tidyverse')
+	library(magrittr)
+	library(tidyverse)
 
-	library('GIjane')
+	library(GIjane)
 
-	library('${3:package}')
+	library(${3:package})
 
 	# create output folder
 	dir_create_output(Rscript)
@@ -217,21 +217,28 @@ snippet tbl_accdb
 	                                                       "Dbq=", accdb))
 	tbl = tbl(src = accdb_con, ${2:"table_name"}) %>% tibble::as_tibble()
 
-snippet rm_all_restart
-	rm(list = ls())
-	gc()
-	.rs.restartR()
-
-snippet excel
+snippet tbl_excel
 	path = file.path("${1:path_to_file.xlsx}")
 	${2:data} <- path %>%
 		excel_sheets() %>%
 		set_names() %>%
 		map_df(~ read_excel(path = path, sheet = .x), .id = "sheet")')
 
-snippet GIdrat
+snippet rm_all_restart
+	rm(list = ls())
+	gc()
+	.rs.restartR()
+
+
+snippet installGIdrat
 	drat::addRepo("GIdrat", alturl = "file://gfk.com/data/001483/geom/MDR/GIdev/06_software/R/GIpackages/DRAT/")
 	getOption("repos")
+
+snippet addGIdrat
+	GIdrat = "P:/06_software/R/GIpackages/DRAT/"
+	drat::insertPackage(file = "myPkg_0.5.0.tar.gz", repodir = GIdrat, action = "archive")
+
+
 
 snippet hh
 	here::here("${1:folder}", "${2:file")
