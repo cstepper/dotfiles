@@ -1,0 +1,15 @@
+[user]
+	name = Christoph Stepper
+	email = christoph.stepper@gfk.com
+[difftool "sourcetree"]
+	cmd = '' \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = "'' "
+	trustExitCode = true
+[credential]
+	helper = wincred
+    
+[http]
+	proxy = http://christoph.stepper@emea-webproxy.gfk.com:3128
+[https]
+	proxy = https://christoph.stepper@emea-webproxy.gfk.com:3128
