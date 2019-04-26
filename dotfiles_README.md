@@ -120,6 +120,9 @@ mklink %USERPROFILE%\.gitconfig %USERPROFILE%\Documents\.gitconfig
 mklink %USERPROFILE%\.basrc %USERPROFILE%\Documents\.bashrc
 ```
 
+See [support.rstudio.com](https://support.rstudio.com/hc/en-us/community/posts/203180856-Where-does-RStudio-look-for-the-global-gitconfig-file-)
+for details.
+
 ## Resources:
 
 * https://github.com/randy3k/dotfiles
