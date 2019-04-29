@@ -95,7 +95,7 @@ See [stackoverflow.com](https://stackoverflow.com/questions/22799825/using-git-o
 ### use symlinks
 
 Due to weird Windows settings for the `HOME` environment variable, you might 
-end up having __2__ `.gitconfig` (and `.bashrc`) files, one in 
+end up having __two__ `.gitconfig` (and `.bashrc`) files, one in 
 ```
 C:/Users/user/Documents
 ```
