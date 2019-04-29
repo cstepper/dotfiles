@@ -39,45 +39,6 @@
       99L, 111L, 109L)
   )
 
-  # ensure Rtools on PATH for Windows
-  isWindows <- Sys.info()[["sysname"]] == "Windows"
-  if (isWindows) {
-    PATH <- Sys.getenv("PATH", unset = "")
-    paths <- strsplit(PATH, .Platform$path.sep, fixed = TRUE)[[1]]
-    hasRtools <- any(file.exists(file.path(paths, "Rtools.txt")))
-    if (!hasRtools) {
-
-      # construct candidate Rtools paths
-      rMajor <- as.numeric(getRversion()[1, 1])
-      rMinor <- as.numeric(getRversion()[1, 2])
-      candidates <- c(
-        sprintf("C:\\RBuildTools\\%s", paste(rMajor, rMinor + 1, sep = ".")),
-        "C:\\Rtools"
-      )
-
-      discovered <- FALSE
-      for (candidate in candidates) {
-        if (file.exists(file.path(candidate, "Rtools.txt"))) {
-
-          bitness <- .Machine$sizeof.pointer * 8
-          entries <- paste(normalizePath(Filter(file.exists, c(
-            file.path(candidate, "bin"),
-            if (getRversion() < "3.3.0")
-              file.path(candidate, "gcc-4.6.3/bin")
-            else
-              file.path(candidate, sprintf("mingw_%s/bin", bitness))
-          ))), collapse = .Platform$path.sep)
-
-          Sys.setenv(PATH = paste(entries, PATH, sep = .Platform$path.sep))
-          discovered <- TRUE
-          break
-        }
-      }
-
-      if (!discovered)
-        warning("Failed to discover Rtools on the PATH")
-    }
-  }
 
   # prefer source packages for older versions of R
   pkgType <- getOption("pkgType")
@@ -169,9 +130,6 @@
 
   )
 
-  # always run Rcpp tests
-  Sys.setenv(RunAllRcppTests = "yes")
-
   # auto-completion of package names in `require`, `library`
   utils::rc.settings(ipck = TRUE)
 
@@ -179,7 +137,6 @@
   suppressPackageStartupMessages(require(devtools))
   suppressPackageStartupMessages(require(testthat))
   suppressPackageStartupMessages(require(usethis))
-
 
   # add notification for long running tasks
   invisible({
@@ -199,10 +156,6 @@
 
     addTaskCallback(notify_long_running())
   })
-
-  # Lookup R full function definitions, including compiled code, S3 and S4 methods.
-  # devtools::install_github(jimhester/lookup)
-  suppressPackageStartupMessages(require(lookup))
 
   # change prompt to promptr
   # require("promptr")
