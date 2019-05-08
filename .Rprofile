@@ -135,7 +135,7 @@
 
   # ensure package development tools are loaded
   suppressPackageStartupMessages(require(devtools))
-  suppressPackageStartupMessages(require(testthat))
+  # suppressPackageStartupMessages(require(testthat))
   suppressPackageStartupMessages(require(usethis))
 
   # add notification for long running tasks

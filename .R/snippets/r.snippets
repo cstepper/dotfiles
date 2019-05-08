@@ -162,7 +162,6 @@ snippet r_skeleton
 	`r paste(c("#", rep("*", 79)), collapse = "")`
 
 	# load libraries
-	library(magrittr)
 	library(tidyverse)
 
 	library(GIjane)
@@ -244,4 +243,4 @@ snippet hh
 	here::here("${1:folder}", "${2:file")
 
 snippet aa
-	${1:dataset} <- ${1:dataset} %>% ${0}
+	${1:dataset} = ${1:dataset} %>% ${0}
