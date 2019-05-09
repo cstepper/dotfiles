@@ -86,8 +86,8 @@ git config --global http.proxy http://<user>@<proxy-server-url>:<port>
 git config --global https.proxy https://<user>@<proxy-server-url>:<port>
 git config --global credential.helpler wincred
 ```
-Just to be clear, replace *<username>* with your current windows username, 
-and <proxy-server-url>:<port> with the your proxy settings.
+Just to be clear, replace `<username>` with your current windows username, 
+and `<proxy-server-url>:<port>` with the your proxy settings.
 
 See [stackoverflow.com](https://stackoverflow.com/questions/22799825/using-git-on-windows-behind-an-http-proxy-without-storing-proxy-password-on-di) and [git-scm.com](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy) for more information.
 
