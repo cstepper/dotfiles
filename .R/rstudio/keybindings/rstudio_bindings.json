@@ -1,5 +1,6 @@
 {
-    "activateTerminal" : "Shift+Alt+T",
-    "restartRClearOutput" : "",
-    "restartRRunAllChunks" : ""
+    "activateTerminal": "Shift+Alt+T",
+    "restartRClearOutput": "",
+    "restartRRunAllChunks": "",
+    "newTerminal": "Alt+Shift+R"
 }
