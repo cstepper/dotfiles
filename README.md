@@ -84,13 +84,22 @@ your config file. Instead, make use of the *Windows Creditial Manager*:
 ```bash
 git config --global http.proxy http://<user>@<proxy-server-url>:<port>
 git config --global https.proxy https://<user>@<proxy-server-url>:<port>
-git config --global credential.helpler wincred
+git config --global credential.helper wincred
 ```
 Just to be clear, replace `<username>` with your current windows username, 
 and `<proxy-server-url>:<port>` with the your proxy settings.
 
 See [stackoverflow.com](https://stackoverflow.com/questions/22799825/using-git-on-windows-behind-an-http-proxy-without-storing-proxy-password-on-di) and [git-scm.com](https://git-scm.com/docs/git-config#Documentation/git-config.txt-httpproxy) for more information.
 
+#### Update
+
+According to the recommendations at [Happy Git with R](https://happygitwithr.com/credential-caching.html#turn-on-the-credential-helper), 
+the preferred setting for ```credential.helper``` is now ```manager```, which configures Git to use 
+Git Credential Manager for Windows, which ships with Git for Windows. This may already be configured, but this command sets it explicitly:
+
+```bash
+git config --global credential.helper manager
+```
 
 ### use symlinks
 
@@ -116,6 +125,15 @@ mklink %USERPROFILE%\.basrc %USERPROFILE%\Documents\.bashrc
 
 See [support.rstudio.com](https://support.rstudio.com/hc/en-us/community/posts/203180856-Where-does-RStudio-look-for-the-global-gitconfig-file-)
 for details.
+
+If you use SSH keys for push/pull actions, it's advisable to do the same 
+
+```cmd
+mklink %USERPROFILE%\.ssh %USERPROFILE%\Documents\.ssh
+```
+
+See https://happygitwithr.com/ssh-keys.html for details.
+
 
 ## Resources
 
