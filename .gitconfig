@@ -8,8 +8,5 @@
 	trustExitCode = true
 [credential]
 	helper = manager
-
 [http]
-	proxy = http://christoph.stepper@emea-webproxy.gfk.com:3128
-[https]
-	proxy = https://christoph.stepper@emea-webproxy.gfk.com:3128
+	sslBackend = schannel
