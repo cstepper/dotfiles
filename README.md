@@ -71,6 +71,25 @@ dot push -u origin master
 
 ### git configs
 
+#### ssl
+
+If for any reason you need to adjust the SSL settings (don't know one now), 
+you can run something like this in your console:
+
+``` 
+git config --global http.sslBackend schannel
+```
+
+This adds the following to your config file.
+```
+[http]
+	sslBackend = schannel
+```
+
+See [stackoverflow](https://stackoverflow.com/questions/16668508/how-do-i-configure-git-to-trust-certificates-from-the-windows-certificate-store) for details. 
+
+#### proxy settings
+
 You can set the proxy settings in your `.gitconfig` file like:
 
 ```
