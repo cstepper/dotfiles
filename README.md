@@ -7,7 +7,7 @@
 
 This is a collection of the dotfiles I built up over time. 
 
-It should help to track the changes and to simplify the setup on different machines.
+It should help to track the changes and to simplify the setup on different (windows) machines.
 
 ## Setup
 
@@ -21,7 +21,7 @@ The most important steps are:
 2. Define an alias `dot` which you can use instead of the regular `git` when
    interacting with the configuration repository (i.e. the *.dotfiles* repo).
 3. Set a flag to the repository to hide files you are not explicitly tracking yet. 
-   This is so that when you type `dot status` and other commands later, 
+   When you type `dot status` and other commands later, 
    files you are not interested in tracking will not show up as `untracked`.
 4. Add the alias definition to your `.bashrc`<sup>[1](#bashrc)</sup> 
    (file will be created if not existing yet).
@@ -73,7 +73,7 @@ dot push -u origin master
 
 #### ssl
 
-If for any reason you need to adjust the SSL settings (don't know one now), 
+If for any reason you need to adjust the SSL settings, 
 you can run something like this in your console:
 
 ``` 
@@ -113,8 +113,10 @@ See [stackoverflow.com](https://stackoverflow.com/questions/22799825/using-git-o
 #### Update
 
 According to the recommendations at [Happy Git with R](https://happygitwithr.com/credential-caching.html#turn-on-the-credential-helper), 
-the preferred setting for ```credential.helper``` is now ```manager```, which configures Git to use 
-Git Credential Manager for Windows, which ships with Git for Windows. This may already be configured, but this command sets it explicitly:
+the preferred setting for ```credential.helper``` is now ```manager```, which 
+configures Git to use Git Credential Manager for Windows, 
+which ships with Git for Windows. 
+It may already be configured, but this command sets it explicitly:
 
 ```bash
 git config --global credential.helper manager
@@ -132,8 +134,8 @@ and another one in
 C:/Users/user
 ```
 
-You can manually snyc the `.gitconfig` files in both directories. One better
-option would be to symlink the `.gitconfig` to both directories.
+You can manually sync the `.gitconfig` files in both directories. 
+One better option would be to symlink the `.gitconfig` to both directories.
 
 Therefore, run `CMD` as *Administrator* and set the symbolic link:
 
