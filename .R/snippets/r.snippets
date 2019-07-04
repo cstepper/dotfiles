@@ -128,6 +128,13 @@ snippet r_header
 	`r paste("# Date:      ", Sys.Date())`
 	`r paste(c("#", rep("*", 79), "\n"), collapse = "")`
 
+snippet r_footer
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+	# Z. create *.Rdone ----
+	`r paste(c("#", rep("*", 79)), collapse = "")`
+
+	file.create(sub(pattern = "\\\.R", replacement = "\\\.Rdone", x = Rscript))
+
 
 snippet yaml_header
 	#' ---
@@ -230,11 +237,11 @@ snippet rm_all_restart
 
 
 snippet installGIdrat
-	drat::addRepo("GIdrat", alturl = "file://gfk.com/data/001483/geom/MDR/GIdev/06_software/R/GIpackages/DRAT/")
+	drat::addRepo("GIdrat", alturl = Sys.getenv("GIdratURL"))
 	getOption("repos")
 
 snippet addGIdrat
-	GIdrat = "P:/06_software/R/GIpackages/DRAT/"
+	GIdrat = Sys.getenv("GIdratPATH")
 	drat::insertPackage(file = "myPkg_0.5.0.tar.gz", repodir = GIdrat, action = "archive")
 
 
