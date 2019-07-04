@@ -48,7 +48,7 @@
   # repositories (add local drat repo)
   local({
     r <- getOption("repos")
-    r["GIdrat"] <- "file://gfk.com/data/001483/geom/MDR/GIdev/06_software/R/GIpackages/DRAT/"
+    r["GIdrat"] <- Sys.getenv("GIdratURL")
     r["CRAN"] <- "https://cran.rstudio.com/"
     options(repos = r)
   })
