@@ -117,15 +117,6 @@
                           sep = ""),
       License = "MIT + file LICENSE",
       Version = "0.0.0.9000"
-    ),
-
-    # devtools options for backwards compatibility
-    devtools.name = paste(GIVEN, FAMILY, sep = " "),
-    devtools.desc = list(
-      Author = paste(GIVEN, FAMILY, sep = " "),
-      Maintainer = paste(GIVEN, " ", FAMILY,  " <", EMAIL, ">", sep = ""),
-      License = "MIT + file LICENSE",
-      Version = "0.0.1"
     )
 
   )
