@@ -56,6 +56,34 @@
   # options
   options(
 
+    ## radian settings
+
+    # radian color scheme
+    radian.color_scheme = "monokai",
+
+    # alignment looks natural when sent to radian by VSCode
+    radian.auto_indentation = FALSE,
+
+    # auto indentation for new line and curly braces
+    radian.auto_indentation = TRUE,
+    radian.tab_size = 4,
+
+    # auto match brackets and quotes
+    radian.auto_match = TRUE,
+
+    # pop up completion while typing
+    radian.complete_while_typing = TRUE,
+    # timeout in seconds to cancel completion if it takes too long
+    # set it to 0 to disable it
+    radian.completion_timeout = 0.05,
+
+    # radian custom prompt for different modes
+    radian.prompt = "\033[0;33mr$>\033[0m ",
+    radian.shell_prompt = "\033[0;35m#!>\033[0m ",
+    radian.browse_prompt = "\033[0;33mBrowse[{}]>\033[0m ",
+
+
+
     # Ncpus: The number of parallel processes to use for a parallel install
     # of more than one source package.
     Ncpus = 6L,
