@@ -166,7 +166,8 @@
       function(expr, value, ok, visible) {
         duration <- proc.time()[1] - last
         if (duration > second_cutoff) {
-          notifier::notify(msg = paste0(collapse = " ", deparse(expr)), title = sprintf("Completed in %.02f (s)", duration))
+          notifier::notify(msg = paste0(collapse = " ", deparse(expr)),
+                           title = sprintf("Completed in %.02f (s)", duration))
         }
         last <<- proc.time()[1]
         TRUE
