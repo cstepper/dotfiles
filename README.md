@@ -150,7 +150,7 @@ for details.
 If you use SSH keys for push/pull actions, it's advisable to do the same 
 
 ```cmd
-mklink %USERPROFILE%\.ssh %USERPROFILE%\Documents\.ssh
+mklink /J %USERPROFILE%\.ssh %USERPROFILE%\Documents\.ssh
 ```
 
 See https://happygitwithr.com/ssh-keys.html for details.
