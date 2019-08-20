@@ -57,7 +57,7 @@ snippet while
 	}
 
 snippet switch
-	switch (${1:object},
+	switch(${1:object},
 		${2:case} = ${3:action}
 	)
 
@@ -228,7 +228,7 @@ snippet tbl_excel
 	${2:data} <- path %>%
 		excel_sheets() %>%
 		set_names() %>%
-		map_df(~ read_excel(path = path, sheet = .x), .id = "sheet")')
+		map_df(~ read_excel(path = path, sheet = .x), .id = "sheet"))
 
 snippet rm_all_restart
 	rm(list = ls())

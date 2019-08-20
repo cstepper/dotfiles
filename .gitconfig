@@ -10,3 +10,4 @@
 	helper = manager
 [http]
 	sslBackend = schannel
+[usethis]

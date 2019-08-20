@@ -1,12 +1,12 @@
 {
-    "GIaddins::cursorToMargin_addin": "Ctrl+End",
-    "GIaddins::cursor_to_margin_addin": "Ctrl+End",
-    "GIaddins::insert_CompPIPE_addin": "Ctrl+Shift+;",
-    "GIaddins::insert_ExpPIPE_addin": "Ctrl+Shift+4",
-    "GIaddins::insert_IN_addin": "Ctrl+Shift+I",
-    "conflr::confl_create_post_from_Rmd": "Ctrl+Alt+P",
-    "datapasta::df_paste": "Ctrl+Shift+P",
-    "datapasta::tribble_paste": "Ctrl+Shift+T",
-    "spAddins::Back2ForwardSlash": "Ctrl+Shift+/",
-    "reprex::reprex_addin": "Shift+X Shift+R"
+    "GIaddins::cursorToMargin_addin" : "Ctrl+End",
+    "GIaddins::cursor_to_margin_addin" : "Ctrl+End",
+    "GIaddins::insert_CompPIPE_addin" : "Ctrl+Shift+;",
+    "GIaddins::insert_ExpPIPE_addin" : "Ctrl+Shift+4",
+    "GIaddins::insert_IN_addin" : "Ctrl+Shift+I",
+    "conflr::confl_create_post_from_Rmd" : "Ctrl+Alt+P",
+    "datapasta::df_paste" : "Ctrl+Shift+P",
+    "datapasta::tribble_paste" : "",
+    "reprex::reprex_addin" : "Shift+X Shift+R",
+    "spAddins::Back2ForwardSlash" : "Ctrl+Shift+/"
 }
