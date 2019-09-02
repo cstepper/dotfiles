@@ -152,6 +152,11 @@
   # auto-completion of package names in `require`, `library`
   utils::rc.settings(ipck = TRUE)
 
+
+  # ensure that reticulate uses the right Python environment
+  reticulate::use_condaenv("r-reticulate")
+
+
   # ensure package development tools are loaded
   suppressPackageStartupMessages(require(devtools))
   # suppressPackageStartupMessages(require(testthat))
