@@ -147,10 +147,13 @@ mklink %USERPROFILE%\.basrc %USERPROFILE%\Documents\.bashrc
 See [support.rstudio.com](https://support.rstudio.com/hc/en-us/community/posts/203180856-Where-does-RStudio-look-for-the-global-gitconfig-file-)
 for details.
 
-If you use SSH keys for push/pull actions, it's advisable to do the same 
+If you use SSH keys for push/pull actions, it's advisable to do the same.
+For other credentials stored in any of your dotfiles directories (e.g. .aws for Amazon S3), 
+I'd suggest to add them to your symlinks in order to ensure a smooth workflow.
 
 ```cmd
 mklink /J %USERPROFILE%\.ssh %USERPROFILE%\Documents\.ssh
+mklink /J %USERPROFILE%\.aws %USERPROFILE%\Documents\.aws
 ```
 
 See https://happygitwithr.com/ssh-keys.html for details.
