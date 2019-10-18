@@ -110,7 +110,7 @@
     menu.graphics = FALSE,
 
     # # show only two lines in traceback
-    # deparse.max.lines = 2 ,
+    # deparse.max.lines = 2,
 
     #  error handling
     error = quote(rlang::entrace()),
@@ -134,6 +134,9 @@
     # keep source code as-is for package installs
     keep.source = TRUE,
     keep.source.pkgs = TRUE,
+
+    # use of styler in reprex
+    reprex.styler = TRUE,
 
     # devtools/usethis related options
     # useful for usethis::create_package / usethis::use_description

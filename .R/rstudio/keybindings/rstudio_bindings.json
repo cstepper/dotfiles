@@ -1,5 +1,6 @@
 {
     "activateTerminal" : "Shift+Alt+T",
+    "clearWorkspace" : "Ctrl+Shift+F9",
     "newTerminal" : "Alt+Shift+R",
     "restartRClearOutput" : "",
     "restartRRunAllChunks" : ""
