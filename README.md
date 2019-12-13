@@ -62,7 +62,7 @@ dot commit -m "add RStudio personal configs"
    create a new (private) repository. Then push your repo:
 
 ```bash
-dot remote add origin https://github.com/cstepper/dotfiles.git
+dot remote add origin git@github.com:cstepper/dotfiles.git
 dot push -u origin master
 ```
 
