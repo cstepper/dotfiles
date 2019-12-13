@@ -140,7 +140,7 @@
 
     # devtools/usethis related options
     # useful for usethis::create_package / usethis::use_description
-    usethis.protocol  = "https",
+    usethis.protocol  = "ssh", # "https",
     usethis.full_name = paste(GIVEN, FAMILY, sep = " "),
     usethis.description = list(
       `Authors@R` = paste('person("', GIVEN, '", "', FAMILY, '", email = "',
