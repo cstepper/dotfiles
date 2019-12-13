@@ -1,13 +1,7 @@
 [user]
 	name = Christoph Stepper
 	email = christoph.stepper@gfk.com
-[difftool "sourcetree"]
-	cmd = '' \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-	cmd = "'' "
-	trustExitCode = true
 [credential]
 	helper = manager
 [http]
 	sslBackend = schannel
-[usethis]
